@@ -62,37 +62,6 @@ int map_A_G(int valor_analogico, int valor_min, int valor_max)
 	return temp; 
 }
 
-void calibragem()
-{
-  	Serial.println("Inicio calibragem dos sensores");
-	umidade_solo_a = analogRead(UMIDADE_SOLO);
-	Serial.print("Umidade Solo (Valor Analogico): ");
-	Serial.println(umidade_solo_a);
-	Serial.print(";");
-
-	temp_solo_a = analogRead(TEMP_SOLO);
-	Serial.print("Temperatura Solo (Valor Analogico): ");
-	Serial.println(temp_solo_a);
-	Serial.print(";");
-
-	umidade_ambiente_a = analogRead(UMIDADE_AMBIENTE);
-	Serial.print("Umidade Ambiente (Valor Analogico): ");
-	Serial.println(umidade_ambiente_a);
-	Serial.print(";");
-
-	temp_ambiente_a = analogRead(TEMP_AMBIENTE);
-	Serial.print("Temperatura Ambiente (Valor Analogico): ");
-	Serial.println(temp_ambiente_a);
-	Serial.print(";");
-
-	luz_ambiente_a = analogRead(FOTORESISTOR);
-	Serial.print("Luz Ambiente (Valor Analogico): ");
-	Serial.println(luz_ambiente_a);
-	Serial.print(";");
-  
-  	Serial.println("Fim da calibragem dos sensores");
-	delay(10000);
-}
 
 void programa(){
 	// INICIO LEITURAS //
