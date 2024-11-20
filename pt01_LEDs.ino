@@ -1,6 +1,11 @@
 // C++ code
 //
 
+/* 
+PARTE 1 - LEDS
+
+Neste código, temos a definição de três LEDs, que serão utilizados para indicar o estado do solo e do ambiente.
+*/
 
 // Definindo nome para as portas digitais e analógicas
 #define LED_VERM 4

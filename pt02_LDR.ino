@@ -1,6 +1,12 @@
 // C++ code
 //
 
+/*
+PARTE 2 - LDR
+
+Neste código, que incrementa a PARTE 1, temos a definição de um LDR, que será utilizado para indicar a luminosidade do ambiente.
+*/
+
 
 // Definindo nome para as portas digitais e analógicas
 #define LED_VERM 4

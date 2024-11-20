@@ -1,6 +1,11 @@
 // C++ code
 //
 
+/*
+PARTE 4 - HIGRÔMETRO
+
+Neste código, que incrementa a PARTE 3, temos a definição de um sensor de umidade do solo.
+*/
 
 // Definindo nome para as portas digitais e analógicas
 #define LED_VERM 4

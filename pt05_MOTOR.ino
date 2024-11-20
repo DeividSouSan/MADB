@@ -1,6 +1,11 @@
 // C++ code
 //
 
+/*
+PARTE 5 - MOTOR
+
+Neste código, que incrementa a PARTE 4, temos a definição de um motor, que será utilizado para simular a aplicação de um produto no solo.
+*/
 
 // Definindo nome para as portas digitais e analógicas
 #define LED_VERM 4

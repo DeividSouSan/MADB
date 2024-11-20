@@ -1,6 +1,14 @@
 // C++ code
 //
 
+/* 
+PARTE 3 - POTENCIÔMETRO
+
+Neste código, que incrementa a PARTE 2, temos a definição de três potenciômetro, que serão utilizados para simular a leitura dos sensores analógicos:
+- Sensor de Umidade do Ambiente
+- Sensor de Temperatura do Solo
+- Sensor de Temperatura do Ambiente
+*/
 
 // Definindo nome para as portas digitais e analógicas
 #define LED_VERM 4
