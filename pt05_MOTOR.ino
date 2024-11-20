@@ -69,10 +69,6 @@ int map_A_G(int valor_analogico, int valor_min, int valor_max)
 
 void loop()
 {   
-    digitalWrite(LED_VERM, HIGH);
-    digitalWrite(LED_AMAR, HIGH);
-    digitalWrite(LED_VERD, HIGH);
-
     // INICIO LEITURAS //
 	Serial.println("------LEITURA------");
 
