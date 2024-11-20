@@ -32,7 +32,7 @@ int umidade_ambiente_a= 0;
 int temp_ambiente_a = 0;
 int umidade_solo_a = 0;
 
-// Variáveis relacionados ao tempo de delay de aplicação
+// Variáveis relacionadas ao tempo de delay
 int const PAUSA_ENTRE_APLICACAO = 20000; // 43.200.000 ms ou 12 horas
 int const TEMPO_MOTOR_LIGADO = 5000;
 int const PAUSA_ENTRE_LEITURA = 10000; // 600.000 ms ou 10 minutos

@@ -31,6 +31,9 @@ int umidade_ambiente_a= 0;
 int temp_ambiente_a = 0;
 int umidade_solo_a = 0;
 
+// Variáveis relacionadas ao tempo de delay
+int const PAUSA_ENTRE_LEITURA = 2000; // 600.000 ms ou 10 minutos
+
 void setup()
 {
 	pinMode(LED_VERM, OUTPUT);
@@ -108,4 +111,6 @@ void loop()
 	Serial.print("Temperatura do Ambiente: ");
 	Serial.print(temp_ambiente);
 	Serial.println(" C");
+
+	delay(PAUSA_ENTRE_LEITURA);
 }
