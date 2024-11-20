@@ -106,3 +106,8 @@ void loop()
 
 	delay(PAUSA_ENTRE_LEITURA);
 }
+
+/*
+Jogar o potênciometro no mínimo deve levar à porcentagem 0% e a temperatura -40 C, enquanto 
+jogar no máximo deve levar à porcentagem 100% e a temperatura 125 C.
+*/
