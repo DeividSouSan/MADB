@@ -5,7 +5,7 @@ Esse repositório contém o código para a implementação incremental do MADB. 
 ## Partes do Projeto
 
 - **Parte 1**: Consiste da implementação dos três (3) LEDs do sistema e um código que irá testa-los.
-- **Parte 2**:  Incrementa a parte 2 adicionando o LDR.
-- **Parte 3**: Incrementa a parte 3 com a adição dos três (3) potênciometros (que simulam um sensor de temperatura do solo, um sensor de temperatura do ambiente e um sensor de umidade do ambiente).
-- **Parte 4**: Incrementa a parte 4 com a adição do higrômetro.
+- **Parte 2**:  Incrementa a parte 1 adicionando o LDR.
+- **Parte 3**: Incrementa a parte 2 com a adição dos três (3) potênciometros (que simulam um sensor de temperatura do solo, um sensor de temperatura do ambiente e um sensor de umidade do ambiente).
+- **Parte 4**: Incrementa a parte 3 com a adição do higrômetro.
 - **Parte 5**: Incrementa a parte 4 (e finaliza o código) com a adição do motor.
