@@ -132,8 +132,8 @@ void loop()
 	
 		// -> Verifica se o ambiente está adequado para aplicacao
 	
-		bool UMIDADE_AMBIENTE_RUIM = (umidade_ambiente <= 20 || umidade_ambiente >= 80);
-		bool TEMPERATURA_AMBIENTE_RUIM = (temp_ambiente <= 15 || temp_ambiente >=35);
+		bool UMIDADE_AMBIENTE_RUIM = (umidade_ambiente <= 55 || umidade_ambiente >= 90);
+		bool TEMPERATURA_AMBIENTE_RUIM = (temp_ambiente >= 30);
 		bool ILUMINACAO_RUIM = (luz_ambiente >= 70); // Representando muito sol
 
 		bool AMBIENTE_PROPICIO_APLICACAO = !(UMIDADE_AMBIENTE_RUIM || TEMPERATURA_AMBIENTE_RUIM || ILUMINACAO_RUIM);
