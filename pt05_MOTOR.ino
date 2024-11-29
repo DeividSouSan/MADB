@@ -126,10 +126,10 @@ void loop()
 	Serial.println("------RESULTADO LEITURAS------");
 	
 	// -> Verifica se o solo está propricio para nematoides
-	bool UMIDADE_SOLO_RUIM = (umidade_solo <= 20 || umidade_solo >= 80);
-	bool TEMPERATURA_SOLO_RUIM = (temp_solo <= 15 || temp_solo >= 35);
+	bool UMIDADE_PROPRICIA_PARA_NEMATOIDES = (umidade_solo <= 20 || umidade_solo >= 80);
+	bool TEMPERATURA_PROPRICIA_PARA_NEMATOIDES = (temp_solo <= 15 || temp_solo >= 35);
 		
-	bool SOLO_PROPICIO_NEMATOIDES = (UMIDADE_SOLO_RUIM && TEMPERATURA_SOLO_RUIM);
+	bool SOLO_PROPICIO__PARA_NEMATOIDES = (UMIDADE_PROPRICIA_NEMATOIDES && TEMPERATURA_PROPRICIA_NEMATOIDES);
 
 	if (SOLO_PROPICIO_NEMATOIDES)
 	{	
@@ -142,13 +142,13 @@ void loop()
 	
 		// -> Verifica se o ambiente está adequado para aplicacao
 	
-		bool UMIDADE_AMBIENTE_RUIM = (umidade_ambiente <= 55 || umidade_ambiente >= 90);
-		bool TEMPERATURA_AMBIENTE_RUIM = (temp_ambiente >= 30);
-		bool ILUMINACAO_RUIM = (luz_ambiente >= 70); // Representando muito sol
+		bool UMIDADE_BOA_PARA_APLICACAO = (umidade_ambiente >= 55 || umidade_ambiente <= 90);
+		bool TEMP_BOA_PARA_APLICACAO = (temp_ambiente <= 30);
+		bool ILUMINACAO_BOA_PARA_APLICACAO = (luz_ambiente <= 70); // Representando muito sol
 
-		bool AMBIENTE_PROPICIO_APLICACAO = !(UMIDADE_AMBIENTE_RUIM || TEMPERATURA_AMBIENTE_RUIM || ILUMINACAO_RUIM);
+		bool AMBIENTE_PROPICIO_PARA_APLICACAO = (UMIDADE_BOA_PARA_APLICACAO && TEMP_BOA_PARA_APLICACAO && ILUMINACAO_BOA_PARA_APLICACAO);
 
-		if (AMBIENTE_PROPICIO_APLICACAO)
+		if (AMBIENTE_PROPICIO_PARA_APLICACAO)
 		{
 				Serial.println("O AMBIENTE ESTA PROPICIO PARA APLICACAO!");
 				Serial.print("LIGANDO MOTOR POR ");
