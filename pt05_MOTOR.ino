@@ -42,8 +42,8 @@ void setup()
 	pinMode(LED_VERM, OUTPUT);
 	pinMode(LED_AMAR, OUTPUT);
 	pinMode(LED_VERD, OUTPUT);
-    pinMode(MOTOR, OUTPUT);
-    Serial.begin(9600);
+    	pinMode(MOTOR, OUTPUT);
+   	Serial.begin(9600);
 }
 
 float map_A_P(int valor_analogico, int valor_min, int valor_max)
@@ -79,10 +79,10 @@ int map_A_G(int valor_analogico, int valor_min, int valor_max)
 
 void loop()
 {   
-    // INICIO LEITURAS //
+   	 // INICIO LEITURAS //
 	Serial.println("------LEITURA------");
 
-    // -> Medições em relação ao SOLO
+    	// -> Medições em relação ao SOLO
 	
 	temp_solo_a = analogRead(TEMP_SOLO);
 	int temp_solo = map_A_G(temp_solo_a, intervalo_temperatura_solo[0], intervalo_temperatura_solo[1]);
@@ -91,24 +91,23 @@ void loop()
 	Serial.print(temp_solo);
 	Serial.println(" C");
 
-    umidade_solo_a = analogRead(UMIDADE_SOLO);
+	umidade_solo_a = analogRead(UMIDADE_SOLO);
 	int umidade_solo = map_A_P_hig(umidade_solo_a, intervalo_umidade_solo[1], intervalo_umidade_solo[0]);
 		
 	Serial.print("Umidade Solo: ");
 	Serial.print(umidade_solo);
 	Serial.println("%");
 	
-	
 	// -> Medições em relação ao AMBIENTE
 
-    luz_ambiente_a = analogRead(FOTORESISTOR);
+    	luz_ambiente_a = analogRead(FOTORESISTOR);
 	int luz_ambiente = map_A_P(luz_ambiente_a, intervalo_luminosidade[0], intervalo_luminosidade[1]);
 
 	Serial.print("Iluminacao do Ambiente: ");
 	Serial.print(luz_ambiente);
 	Serial.println("%");
 
-    umidade_ambiente_a = analogRead(UMIDADE_AMBIENTE);
+    	umidade_ambiente_a = analogRead(UMIDADE_AMBIENTE);
 	int umidade_ambiente = map_A_P(umidade_ambiente_a, intervalo_umidade_ambiente[0], intervalo_umidade_ambiente[1]);
 	
 	Serial.print("Umidade Ambiente: ");
@@ -122,7 +121,7 @@ void loop()
 	Serial.print(temp_ambiente);
 	Serial.println(" C");
 
-    // INICIO REGRA DE NEGÓCIO //
+    	// INICIO REGRA DE NEGÓCIO //
 	Serial.println("------RESULTADO LEITURAS------");
 	
 	// -> Verifica se o solo está propricio para nematoides
@@ -150,26 +149,26 @@ void loop()
 
 		if (AMBIENTE_PROPICIO_PARA_APLICACAO)
 		{
-				Serial.println("O AMBIENTE ESTA PROPICIO PARA APLICACAO!");
-				Serial.print("LIGANDO MOTOR POR ");
-				Serial.print(TEMPO_MOTOR_LIGADO);
-				Serial.println(" SEGUNDOS.");
+			Serial.println("O AMBIENTE ESTA PROPICIO PARA APLICACAO!");
+			Serial.print("LIGANDO MOTOR POR ");
+			Serial.print(TEMPO_MOTOR_LIGADO);
+			Serial.println(" SEGUNDOS.");
 
-				digitalWrite(MOTOR, HIGH);
-				delay(TEMPO_MOTOR_LIGADO);
-				digitalWrite(MOTOR, LOW);
-				Serial.println("APLICACAO FEITA, MOTOR DESLIGADO.");
+			digitalWrite(MOTOR, HIGH);
+			delay(TEMPO_MOTOR_LIGADO);
+			digitalWrite(MOTOR, LOW);
+			Serial.println("APLICACAO FEITA, MOTOR DESLIGADO.");
 
-				// -> Ajustando LEDs de feedback
-				digitalWrite(LED_VERM, HIGH);
-				digitalWrite(LED_AMAR, LOW);
-				digitalWrite(LED_VERD, LOW);
-			
-				// -> Pausa entre as aplicações
-				delay(PAUSA_ENTRE_APLICACAO);
+			// -> Ajustando LEDs de feedback
+			digitalWrite(LED_VERM, HIGH);
+			digitalWrite(LED_AMAR, LOW);
+			digitalWrite(LED_VERD, LOW);
+		
+			// -> Pausa entre as aplicações
+			delay(PAUSA_ENTRE_APLICACAO);
 		} else {
-				Serial.println("O AMBIENTE NAO ESTA PROPICIO PARA APLICACAO!");
-				delay(PAUSA_ENTRE_LEITURA);
+			Serial.println("O AMBIENTE NAO ESTA PROPICIO PARA APLICACAO!");
+			delay(PAUSA_ENTRE_LEITURA);
 		}
 	} else {
 		// -> Ajustando LEDs de feedback
