@@ -22,7 +22,7 @@ int intervalo_luminosidade[2] = {2, 404}; // Luminosidade
 int intervalo_umidade_ambiente[2] = {0, 1023}; // Umidade Ambiente
 int intervalo_temperatura_solo[2] = {0, 1023}; // Temperatura Solo
 int intervalo_temperatura_ambiente[2] = {0, 1023}; // Temperatura Ambiente
-int intervalo_umidade_solo[2] = {0, 876}; // Umidade Solo
+int intervalo_umidade_solo[2] = {330, 1023}; // Umidade Solo
 
 // Variáveis para armazenar o valor dos sensores
 int luz_ambiente_a = 0;
@@ -53,6 +53,17 @@ float map_A_P(int valor_analogico, int valor_min, int valor_max)
 	return porcentagem;
 }
 
+float map_A_P_hig(int valor_analogico, int valor_min, int valor_max)
+{
+	/*
+	Mapeamento de um valor analógico para porcentagem do higrômetrto de acordo com o intervalo de valores.
+	*/
+	
+	float porcentagem = map((valor_analogico), valor_max, valor_min, 100, 0);
+	return porcentagem;
+}
+
+
 int map_A_G(int valor_analogico, int valor_min, int valor_max)
 {
 	/*
@@ -82,7 +93,7 @@ void loop()
 	Serial.println(" C");
 
     umidade_solo_a = analogRead(UMIDADE_SOLO);
-	int umidade_solo = map_A_P(umidade_solo_a, intervalo_umidade_solo[0], intervalo_umidade_solo[1]);
+	int umidade_solo = map_A_P_hig(umidade_solo_a, intervalo_umidade_solo[1], intervalo_umidade_solo[0]);
 		
 	Serial.print("Umidade Solo: ");
 	Serial.print(umidade_solo);
